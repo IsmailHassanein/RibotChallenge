@@ -26,6 +26,7 @@
 		06FC93FF199CD1E900968309 /* RBTServiceCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = 06FC93FE199CD1E900968309 /* RBTServiceCoordinator.m */; };
 		06FC9402199CD29700968309 /* RBTRibot.m in Sources */ = {isa = PBXBuildFile; fileRef = 06FC9401199CD29700968309 /* RBTRibot.m */; };
 		06FC9405199CD4B000968309 /* RBTMemberDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06FC9404199CD4B000968309 /* RBTMemberDetailViewController.m */; };
+		06FC9408199CDAEF00968309 /* RBTStudio.m in Sources */ = {isa = PBXBuildFile; fileRef = 06FC9407199CDAEF00968309 /* RBTStudio.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,8 @@
 		06FC9401199CD29700968309 /* RBTRibot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RBTRibot.m; sourceTree = "<group>"; };
 		06FC9403199CD4B000968309 /* RBTMemberDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBTMemberDetailViewController.h; sourceTree = "<group>"; };
 		06FC9404199CD4B000968309 /* RBTMemberDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RBTMemberDetailViewController.m; sourceTree = "<group>"; };
+		06FC9406199CDAEF00968309 /* RBTStudio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBTStudio.h; sourceTree = "<group>"; };
+		06FC9407199CDAEF00968309 /* RBTStudio.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RBTStudio.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,6 +175,8 @@
 			children = (
 				06FC9400199CD29700968309 /* RBTRibot.h */,
 				06FC9401199CD29700968309 /* RBTRibot.m */,
+				06FC9406199CDAEF00968309 /* RBTStudio.h */,
+				06FC9407199CDAEF00968309 /* RBTStudio.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -311,6 +316,7 @@
 				06FC93FA199CCB9200968309 /* RBTRibotCell.m in Sources */,
 				06FC93CA199CB66300968309 /* main.m in Sources */,
 				06FC9405199CD4B000968309 /* RBTMemberDetailViewController.m in Sources */,
+				06FC9408199CDAEF00968309 /* RBTStudio.m in Sources */,
 				06FC93CE199CB66300968309 /* RBTAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

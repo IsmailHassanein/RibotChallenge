@@ -8,8 +8,18 @@
 
 #import <Foundation/Foundation.h>
 
+@class RBTRibot;
+@class RBTStudio;
+
 @interface RBTServiceCoordinator : NSObject
 
 + (id)sharedCoordinator;
+
+- (void)getTeam:(void(^) (NSArray * response, NSError *error))completionHandler;
+- (void)getMember:(NSString *)memberID
+completionHandler:(void(^) (RBTRibot * response, NSError *error))completionHandler;
+- (void)getRibotar:(NSString *)memberID
+ completionHandler:(void(^) (UIImage * response, NSError *error))completionHandler;
+- (void)getStudio:(void(^) (RBTStudio * response, NSError *error))completionHandler;
 
 @end

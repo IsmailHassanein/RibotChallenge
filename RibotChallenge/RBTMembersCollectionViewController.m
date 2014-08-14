@@ -8,8 +8,10 @@
 
 #import "RBTMembersCollectionViewController.h"
 #import "RBTMemberDetailViewController.h"
+#import "RBTServiceCoordinator.h"
 #import "RBTRibotCell.h"
 #import "RBTRibot.h"
+#import "RBTStudio.h"
 
 @interface RBTMembersCollectionViewController ()
 
@@ -39,6 +41,23 @@
     [collectionView registerNib:[UINib nibWithNibName:@"RBTRibotCell"
                                                bundle:[NSBundle mainBundle]]
      forCellWithReuseIdentifier:@"RibotCell"];
+    RBTServiceCoordinator *sharedCoordinator = [RBTServiceCoordinator sharedCoordinator];
+    [sharedCoordinator getTeam:^(NSArray *response, NSError *error) {
+        if(error)
+        {
+            NSLog(@"%@", [error localizedDescription]);
+        } else {
+            allRibots = response;
+            NSLog(@"team: %@", response);
+        }
+    }];
+    [sharedCoordinator getMember:@"antony"
+completionHandler:^(RBTRibot *response, NSError *error) {
+    NSLog(@"Member: %@", response);
+}];
+    [sharedCoordinator getStudio:^(RBTStudio *response, NSError *error) {
+        NSLog(@"studio: %@", response);
+    }];
 }
 
 - (void)didReceiveMemoryWarning
