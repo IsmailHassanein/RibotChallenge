@@ -19,6 +19,13 @@
 		06FC93D9199CB66300968309 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06FC93C1199CB66300968309 /* UIKit.framework */; };
 		06FC93E1199CB66300968309 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 06FC93DF199CB66300968309 /* InfoPlist.strings */; };
 		06FC93E3199CB66300968309 /* RibotChallengeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 06FC93E2199CB66300968309 /* RibotChallengeTests.m */; };
+		06FC93F1199CC8C400968309 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06FC93F0199CC8C400968309 /* MainStoryboard.storyboard */; };
+		06FC93F7199CC9D600968309 /* RBTMembersCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06FC93F6199CC9D600968309 /* RBTMembersCollectionViewController.m */; };
+		06FC93FA199CCB9200968309 /* RBTRibotCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 06FC93F9199CCB9200968309 /* RBTRibotCell.m */; };
+		06FC93FC199CCBB900968309 /* RBTRibotCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06FC93FB199CCBB900968309 /* RBTRibotCell.xib */; };
+		06FC93FF199CD1E900968309 /* RBTServiceCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = 06FC93FE199CD1E900968309 /* RBTServiceCoordinator.m */; };
+		06FC9402199CD29700968309 /* RBTRibot.m in Sources */ = {isa = PBXBuildFile; fileRef = 06FC9401199CD29700968309 /* RBTRibot.m */; };
+		06FC9405199CD4B000968309 /* RBTMemberDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06FC9404199CD4B000968309 /* RBTMemberDetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +55,18 @@
 		06FC93DE199CB66300968309 /* RibotChallengeTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RibotChallengeTests-Info.plist"; sourceTree = "<group>"; };
 		06FC93E0199CB66300968309 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		06FC93E2199CB66300968309 /* RibotChallengeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RibotChallengeTests.m; sourceTree = "<group>"; };
+		06FC93F0199CC8C400968309 /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
+		06FC93F5199CC9D600968309 /* RBTMembersCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBTMembersCollectionViewController.h; sourceTree = "<group>"; };
+		06FC93F6199CC9D600968309 /* RBTMembersCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RBTMembersCollectionViewController.m; sourceTree = "<group>"; };
+		06FC93F8199CCB9200968309 /* RBTRibotCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBTRibotCell.h; sourceTree = "<group>"; };
+		06FC93F9199CCB9200968309 /* RBTRibotCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RBTRibotCell.m; sourceTree = "<group>"; };
+		06FC93FB199CCBB900968309 /* RBTRibotCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RBTRibotCell.xib; sourceTree = "<group>"; };
+		06FC93FD199CD1E900968309 /* RBTServiceCoordinator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBTServiceCoordinator.h; sourceTree = "<group>"; };
+		06FC93FE199CD1E900968309 /* RBTServiceCoordinator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RBTServiceCoordinator.m; sourceTree = "<group>"; };
+		06FC9400199CD29700968309 /* RBTRibot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBTRibot.h; sourceTree = "<group>"; };
+		06FC9401199CD29700968309 /* RBTRibot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RBTRibot.m; sourceTree = "<group>"; };
+		06FC9403199CD4B000968309 /* RBTMemberDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBTMemberDetailViewController.h; sourceTree = "<group>"; };
+		06FC9404199CD4B000968309 /* RBTMemberDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RBTMemberDetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +128,10 @@
 			children = (
 				06FC93CC199CB66300968309 /* RBTAppDelegate.h */,
 				06FC93CD199CB66300968309 /* RBTAppDelegate.m */,
+				06FC93EF199CC6D600968309 /* Services */,
+				06FC93EE199CC6CE00968309 /* Controller */,
+				06FC93ED199CC6C400968309 /* View */,
+				06FC93EC199CC6B800968309 /* Model */,
 				06FC93CF199CB66300968309 /* Images.xcassets */,
 				06FC93C4199CB66300968309 /* Supporting Files */,
 			);
@@ -142,6 +165,46 @@
 				06FC93DF199CB66300968309 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		06FC93EC199CC6B800968309 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				06FC9400199CD29700968309 /* RBTRibot.h */,
+				06FC9401199CD29700968309 /* RBTRibot.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		06FC93ED199CC6C400968309 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				06FC93F0199CC8C400968309 /* MainStoryboard.storyboard */,
+				06FC93FB199CCBB900968309 /* RBTRibotCell.xib */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		06FC93EE199CC6CE00968309 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				06FC93F5199CC9D600968309 /* RBTMembersCollectionViewController.h */,
+				06FC93F6199CC9D600968309 /* RBTMembersCollectionViewController.m */,
+				06FC9403199CD4B000968309 /* RBTMemberDetailViewController.h */,
+				06FC9404199CD4B000968309 /* RBTMemberDetailViewController.m */,
+				06FC93F8199CCB9200968309 /* RBTRibotCell.h */,
+				06FC93F9199CCB9200968309 /* RBTRibotCell.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		06FC93EF199CC6D600968309 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				06FC93FD199CD1E900968309 /* RBTServiceCoordinator.h */,
+				06FC93FE199CD1E900968309 /* RBTServiceCoordinator.m */,
+			);
+			name = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -220,6 +283,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				06FC93F1199CC8C400968309 /* MainStoryboard.storyboard in Resources */,
+				06FC93FC199CCBB900968309 /* RBTRibotCell.xib in Resources */,
 				06FC93C8199CB66300968309 /* InfoPlist.strings in Resources */,
 				06FC93D0199CB66300968309 /* Images.xcassets in Resources */,
 			);
@@ -240,7 +305,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				06FC93F7199CC9D600968309 /* RBTMembersCollectionViewController.m in Sources */,
+				06FC9402199CD29700968309 /* RBTRibot.m in Sources */,
+				06FC93FF199CD1E900968309 /* RBTServiceCoordinator.m in Sources */,
+				06FC93FA199CCB9200968309 /* RBTRibotCell.m in Sources */,
 				06FC93CA199CB66300968309 /* main.m in Sources */,
+				06FC9405199CD4B000968309 /* RBTMemberDetailViewController.m in Sources */,
 				06FC93CE199CB66300968309 /* RBTAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
