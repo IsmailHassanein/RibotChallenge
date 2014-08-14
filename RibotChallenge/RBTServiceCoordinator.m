@@ -118,6 +118,9 @@ static NSString *basicURLString = @"http://devchallenge.ribot.io/api";
                       [mutableResult setObject:[results objectForKey:@"id"]
                                         forKey:@"identifier"];
                       [mutableResult removeObjectForKey:@"id"];
+                      [mutableResult setObject:[results objectForKey:@"description"]
+                                        forKey:@"details"];
+                      [mutableResult removeObjectForKey:@"description"];
                      resultRibot = [[RBTRibot alloc] initWithDictionary:mutableResult];
                   }
                   

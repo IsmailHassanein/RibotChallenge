@@ -14,7 +14,6 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
-            <color key="backgroundColor" red="1" green="0.11430840959999999" blue="0.080129366839999994" alpha="1" colorSpace="calibratedRGB"/>
         </collectionViewCell>
     </objects>
 </document>

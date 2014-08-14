@@ -8,9 +8,9 @@
 
 #import "RBTRibotCell.h"
 #import "RBTRibot.h"
+#import "UIColor+HexString.h"
 
 @implementation RBTRibotCell
-@synthesize ribot;
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -21,9 +21,12 @@
     return self;
 }
 
-- (void)setRibot:(RBTRibot *)_ribot
+-(void)setUpFromRibot:(RBTRibot *)ribot
 {
-    self.ribot = _ribot;
+    if (ribot.hexColor && ![ribot.hexColor isEqualToString:@"(null)"])
+    {
+    [self setBackgroundColor:[UIColor colorWithHexString:ribot.hexColor]];
+    }
 #warning TODO: set up cell from ribot
 }
 

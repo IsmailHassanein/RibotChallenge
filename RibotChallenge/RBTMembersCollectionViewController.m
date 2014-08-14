@@ -48,15 +48,11 @@
             NSLog(@"%@", [error localizedDescription]);
         } else {
             allRibots = response;
-            NSLog(@"team: %@", response);
+            
+            [collectionView performSelectorOnMainThread:@selector(reloadData)
+                                             withObject:nil
+                                          waitUntilDone:NO];
         }
-    }];
-    [sharedCoordinator getMember:@"antony"
-completionHandler:^(RBTRibot *response, NSError *error) {
-    NSLog(@"Member: %@", response);
-}];
-    [sharedCoordinator getStudio:^(RBTStudio *response, NSError *error) {
-        NSLog(@"studio: %@", response);
     }];
 }
 
@@ -66,17 +62,16 @@ completionHandler:^(RBTRibot *response, NSError *error) {
     // Dispose of any resources that can be recreated.
 }
 
- #pragma mark - Navigation
- 
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
- {
-     RBTMemberDetailViewController *destination = [segue destinationViewController];
-     //////////TO BE INCLUDED ONCE DATA IS LIVE
-     /*
-      RBTRibot *tempRibot = [allRibots objectAtIndex:indexPath.row];
-      [destination setRibot:tempRibot];
-      */
- }
+#pragma mark - Navigation
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    RBTMemberDetailViewController *destination = [segue destinationViewController];
+    
+    NSUInteger index = ((NSIndexPath *)[[collectionView indexPathsForSelectedItems] lastObject]).row;
+    RBTRibot *tempRibot = [allRibots objectAtIndex:index];
+    [destination setUpFromRibot:tempRibot];
+}
 
 #pragma mark - Collection View Delegate/Datasource
 
@@ -87,19 +82,16 @@ completionHandler:^(RBTRibot *response, NSError *error) {
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    //return [allRibots count];
-    return 10;
+    return [allRibots count];
 }
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     RBTRibotCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"RibotCell"
                                                                    forIndexPath:indexPath];
-//////////TO BE INCLUDED ONCE DATA IS LIVE
-    /*
+
     RBTRibot *tempRibot = [allRibots objectAtIndex:indexPath.row];
-    [cell setRibot:tempRibot];
-     */
+    [cell setUpFromRibot:tempRibot];
     return cell;
 }
 

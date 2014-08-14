@@ -17,7 +17,7 @@
 @property (nonatomic, strong) NSString *role;
 @property (nonatomic, strong) NSString *identifier;
 @property (nonatomic, strong) NSString *url;
-@property (nonatomic, strong) NSString *description;
+@property (nonatomic, strong) NSString *details;
 @property (nonatomic, strong) NSString *email;
 @property (nonatomic, strong) NSString *favSeason;
 @property (nonatomic, strong) NSString *favSweet;
@@ -25,5 +25,11 @@
 @property (nonatomic, strong) NSString *twitter;
 
 -(instancetype)initWithDictionary:(NSDictionary *)dictionary;
+
+-(void)getAllInfo:(void(^) ())completion;
+
+-(void)getRibotar:(void(^) (UIImage *))completion;
+
+-(void)mergeSelfWithRibot:(RBTRibot *)ribot;
 
 @end

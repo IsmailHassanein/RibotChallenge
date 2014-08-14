@@ -8,13 +8,21 @@
 
 #import "RBTMemberDetailViewController.h"
 #import "RBTRibot.h"
+#import "UIColor+HexString.h"
 
 @interface RBTMemberDetailViewController ()
+
+@property (weak, nonatomic) IBOutlet UIImageView *ribotarView;
+@property (weak, nonatomic) IBOutlet UILabel *roleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *favSweetLabel;
+@property (weak, nonatomic) IBOutlet UILabel *favSeasonLabel;
+@property (weak, nonatomic) IBOutlet UILabel *twitterLabel;
+@property (weak, nonatomic) IBOutlet UITextView *descriptionText;
 
 @end
 
 @implementation RBTMemberDetailViewController
-@synthesize ribot;
+@synthesize ribot, ribotarView, roleLabel, favSeasonLabel, favSweetLabel, twitterLabel, descriptionText;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -37,10 +45,34 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)setRibot:(RBTRibot *)_ribot
+- (void)setUpFromRibot:(RBTRibot *)newRibot
 {
-    self.ribot = _ribot;
+    ribot = newRibot;
 #warning TODO: set up view from ribot
+    if (ribot.hexColor && ![ribot.hexColor isEqualToString:@"(null)"]) {
+        [self.view setBackgroundColor:[UIColor colorWithHexString:ribot.hexColor]];
+    }
+
+    if (ribot.nickname && ![ribot.nickname isEqualToString:@"(null)"])
+    {
+        [self setTitle:[NSString stringWithFormat:@"%@ '%@' %@", ribot.firstName, ribot.nickname, ribot.lastName]];
+    } else {
+        [self setTitle:[NSString stringWithFormat:@"%@ %@", ribot.firstName, ribot.lastName]];
+    }
+
+#warning TODO: needs cancel!!!
+    [ribot getAllInfo:^{
+#warning TODO: animate
+
+        [roleLabel setText:ribot.role];
+        [descriptionText setText:ribot.details];
+        [favSweetLabel setText:ribot.favSweet];
+        [favSeasonLabel setText:ribot.favSeason];
+        [twitterLabel setText:ribot.twitter];
+    }];
+    [ribot getRibotar:^(UIImage *ribotar) {
+        [ribotarView setImage:ribotar];
+    }];
 }
 
 /*

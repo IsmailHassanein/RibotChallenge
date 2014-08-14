@@ -14,4 +14,5 @@
 
 @property (strong, nonatomic) RBTRibot *ribot;
 
+-(void)setUpFromRibot:(RBTRibot *)ribot;
 @end

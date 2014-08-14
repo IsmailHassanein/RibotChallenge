@@ -27,6 +27,7 @@
 		06FC9402199CD29700968309 /* RBTRibot.m in Sources */ = {isa = PBXBuildFile; fileRef = 06FC9401199CD29700968309 /* RBTRibot.m */; };
 		06FC9405199CD4B000968309 /* RBTMemberDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06FC9404199CD4B000968309 /* RBTMemberDetailViewController.m */; };
 		06FC9408199CDAEF00968309 /* RBTStudio.m in Sources */ = {isa = PBXBuildFile; fileRef = 06FC9407199CDAEF00968309 /* RBTStudio.m */; };
+		06FC940C199D048100968309 /* UIColor+HexString.m in Sources */ = {isa = PBXBuildFile; fileRef = 06FC940B199D048100968309 /* UIColor+HexString.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +71,8 @@
 		06FC9404199CD4B000968309 /* RBTMemberDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RBTMemberDetailViewController.m; sourceTree = "<group>"; };
 		06FC9406199CDAEF00968309 /* RBTStudio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBTStudio.h; sourceTree = "<group>"; };
 		06FC9407199CDAEF00968309 /* RBTStudio.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RBTStudio.m; sourceTree = "<group>"; };
+		06FC940A199D048100968309 /* UIColor+HexString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+HexString.h"; sourceTree = "<group>"; };
+		06FC940B199D048100968309 /* UIColor+HexString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+HexString.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +138,7 @@
 				06FC93EE199CC6CE00968309 /* Controller */,
 				06FC93ED199CC6C400968309 /* View */,
 				06FC93EC199CC6B800968309 /* Model */,
+				06FC9409199D045C00968309 /* Utility */,
 				06FC93CF199CB66300968309 /* Images.xcassets */,
 				06FC93C4199CB66300968309 /* Supporting Files */,
 			);
@@ -210,6 +214,15 @@
 				06FC93FE199CD1E900968309 /* RBTServiceCoordinator.m */,
 			);
 			name = Services;
+			sourceTree = "<group>";
+		};
+		06FC9409199D045C00968309 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				06FC940A199D048100968309 /* UIColor+HexString.h */,
+				06FC940B199D048100968309 /* UIColor+HexString.m */,
+			);
+			name = Utility;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -313,6 +326,7 @@
 				06FC93F7199CC9D600968309 /* RBTMembersCollectionViewController.m in Sources */,
 				06FC9402199CD29700968309 /* RBTRibot.m in Sources */,
 				06FC93FF199CD1E900968309 /* RBTServiceCoordinator.m in Sources */,
+				06FC940C199D048100968309 /* UIColor+HexString.m in Sources */,
 				06FC93FA199CCB9200968309 /* RBTRibotCell.m in Sources */,
 				06FC93CA199CB66300968309 /* main.m in Sources */,
 				06FC9405199CD4B000968309 /* RBTMemberDetailViewController.m in Sources */,
