@@ -63,9 +63,7 @@ static NSString *basicURLString = @"http://devchallenge.ribot.io/api";
                   completionHandler:^(NSData *data, NSError *connectionError) {
                       if (connectionError)//if an error has occured during connection
                       {
-                          //dispatch_async(dispatch_get_main_queue(), ^{
                           completionHandler(nil,connectionError);
-                          //});
                       } else {
                           NSError *serializeError;
                           NSDictionary *results = [NSJSONSerialization JSONObjectWithData:data
@@ -92,6 +90,7 @@ static NSString *basicURLString = @"http://devchallenge.ribot.io/api";
                       
                       for(NSDictionary *dictionary in results)
                       {
+                          //We're going to replace id with identifier for safety's sake
                           NSMutableDictionary *mutableDictionary = [dictionary mutableCopy];
                           [mutableDictionary setObject:[dictionary objectForKey:@"id"]
                                                 forKey:@"identifier"];
@@ -178,7 +177,6 @@ static NSString *basicURLString = @"http://devchallenge.ribot.io/api";
 {
     [self downloadJSONWithURLString:[basicURLString stringByAppendingString:@"/studio"]
                   completionHandler:^(NSDictionary *results, NSError *error) {
-                      //PARSE
                       RBTStudio *resultStudio = [[RBTStudio alloc] initWithDictionary:results];
                       
                       dispatch_async(dispatch_get_main_queue(), ^{

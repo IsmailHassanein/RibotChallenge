@@ -23,6 +23,7 @@
 @property (nonatomic, strong) NSString *favSweet;
 @property (nonatomic, strong) NSString *location;
 @property (nonatomic, strong) NSString *twitter;
+@property (nonatomic, assign, getter = isCompleteRibot) BOOL completeRibot;//Indicates if this member's details have been fetched individually (inidvidual fetch gets more data for a ribot than team fetch)
 
 -(instancetype)initWithDictionary:(NSDictionary *)dictionary;
 

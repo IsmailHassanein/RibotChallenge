@@ -7,6 +7,7 @@
 //
 
 #import <XCTest/XCTest.h>
+#import "RBTRibot.h"
 
 @interface RibotChallengeTests : XCTestCase
 
@@ -26,9 +27,14 @@
     [super tearDown];
 }
 
-- (void)testExample
+- (void)testRibotMerge
 {
-    XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
+    RBTRibot *ribotOne = [[RBTRibot alloc] initWithDictionary:@{@"firstName": @"nameOne"}];
+    RBTRibot *ribotTwo = [[RBTRibot alloc] initWithDictionary:@{@"firstName": @"nameTwo", @"lastName": @"lastTwo"}];
+    
+    [ribotOne mergeSelfWithRibot:ribotTwo];
+    XCTAssertTrue([ribotOne.firstName isEqualToString:@"nameOne"], @"Existing properties overwritten");
+    XCTAssertTrue([ribotOne.lastName isEqualToString:@"lastTwo"], @"New properties not added");
 }
 
 @end

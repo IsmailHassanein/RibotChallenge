@@ -23,12 +23,14 @@
 @property (weak, nonatomic) IBOutlet UILabel *descriptionTitleText;
 @property (weak, nonatomic) IBOutlet UITextView *descriptionText;
 @property (weak, nonatomic) IBOutlet UITableView *twitterFeedTable;
+@property (weak, nonatomic) IBOutlet UILabel *loadingRibotarLabel;
+@property (weak, nonatomic) IBOutlet UILabel *loadingFeedLabel;
 @property (strong, nonatomic) NSMutableArray *twitterFeed;
 
 @end
 
 @implementation RBTMemberDetailViewController
-@synthesize ribot, ribotarView, roleLabel, favSweetLabel, descriptionText, twitterFeed, twitterFeedTable, locationLabel, descriptionTitleText;
+@synthesize ribot, ribotarView, roleLabel, favSweetLabel, descriptionText, twitterFeed, twitterFeedTable, locationLabel, descriptionTitleText, loadingFeedLabel, loadingRibotarLabel;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -75,22 +77,31 @@
         [self setTitle:[NSString stringWithFormat:@"%@ %@", ribot.firstName, ribot.lastName]];
     }
     
-#warning TODO: needs cancel!!!
-    [ribot getAllInfo:^{
-        [roleLabel setText:ribot.role];
-        [descriptionText setText:ribot.details];
-        [descriptionText setFont:[UIFont systemFontOfSize:20]];
-        [favSweetLabel setText:[NSString stringWithFormat:@"Favourite sweet is %@",ribot.favSweet]];
-        [locationLabel setText:[NSString stringWithFormat:@"Lives in %@",ribot.location]];
-        [descriptionTitleText setText:[NSString stringWithFormat:@"Who is %@?", ribot.firstName]];
-        [self getTwitterFeedForRibot:ribot.twitter];
-    }];
+    if ([ribot isCompleteRibot])
+    {
+        [self populateFromCurrentRibot];
+    } else {
+        [ribot getAllInfo:^{
+            [ribot setCompleteRibot:YES];
+            [self populateFromCurrentRibot];
+        }];
+    }
+    
     [ribot getRibotar:^(UIImage *ribotar) {
-        if (ribotar)
-        {
-            [ribotarView setImage:ribotar];
-        }
+        [loadingRibotarLabel setHidden:YES];
+        [ribotarView setImage:ribotar];
     }];
+}
+
+-(void)populateFromCurrentRibot
+{
+    [roleLabel setText:ribot.role];
+    [descriptionText setText:ribot.details];
+    [descriptionText setFont:[UIFont systemFontOfSize:20]];
+    [favSweetLabel setText:[NSString stringWithFormat:@"Favourite sweet is %@",ribot.favSweet]];
+    [locationLabel setText:[NSString stringWithFormat:@"Lives in %@",ribot.location]];
+    [descriptionTitleText setText:[NSString stringWithFormat:@"Who is %@?", ribot.firstName]];
+    [self getTwitterFeedForRibot:ribot.twitter];
 }
 
 - (void)getTwitterFeedForRibot:(NSString *)twitterName
@@ -111,14 +122,17 @@
                 [tweet setCreated_at:[tempDict objectForKey:@"created_at"]];
                 [twitterFeed addObject:tweet];
                 
+                [loadingFeedLabel setHidden:YES];
                 [self.twitterFeedTable reloadData];
             }
         } errorBlock:^(NSError *error) {
             NSLog(@"-- error: %@", error);
+            [loadingFeedLabel setText:@"Error loading feed"];
         }];
         
     } errorBlock:^(NSError *error) {
         NSLog(@"-- error %@", error);
+        [loadingFeedLabel setText:@"Authentication error"];
     }];
 }
 
@@ -199,7 +213,7 @@
                                                                                       30,
                                                                                       40,
                                                                                       40)];
-        [rightSeasonImage setImage:seasonImage];
+        [rightSeasonImage setImage:seasonImage];//I would like this image to show the ribots' favourite sweet, but that would require some sort of massively-comprehensive sweet icon catalogue to be reliable and unfortunately, that's difficult to get. I would just use a google images search and use the first result, but I fear the potential results.
         [rightSeasonImage setContentMode:UIViewContentModeScaleAspectFit];
         [header addSubview:leftSeasonImage];
         [header addSubview:rightSeasonImage];

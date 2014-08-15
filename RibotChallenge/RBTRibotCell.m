@@ -10,13 +10,17 @@
 #import "RBTRibot.h"
 #import "UIColor+HexString.h"
 
+@interface RBTRibotCell()
+
+@end
+
 @implementation RBTRibotCell
 
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
-        // Initialization code
+
     }
     return self;
 }
@@ -37,11 +41,11 @@
         [nameLabel setText:ribot.firstName];
     }
     [ribot getRibotar:^(UIImage *ribotar) {
-        if (ribotar)
-        {
-            UIImageView *ribotarView = ((UIImageView *)[self viewWithTag:102]);
-            [ribotarView setImage:ribotar];
-        }
+        UILabel *loadingRibotarLabel = ((UILabel *)[self viewWithTag:103]);
+        [loadingRibotarLabel setHidden:YES];
+        UIImageView *ribotarView = ((UIImageView *)[self viewWithTag:102]);
+        [ribotarView setImage:ribotar];
+
     }];
 }
 

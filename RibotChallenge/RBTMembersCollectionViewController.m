@@ -12,6 +12,7 @@
 #import "RBTRibotCell.h"
 #import "RBTRibot.h"
 #import "RBTStudio.h"
+#import "UIImage+Tiling.h"
 
 @interface RBTMembersCollectionViewController ()
 
@@ -27,7 +28,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+
     }
     return self;
 }
@@ -35,13 +36,17 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+
     [collectionView registerClass:[RBTRibotCell class]
        forCellWithReuseIdentifier:@"RibotCell"];
     [collectionView registerNib:[UINib nibWithNibName:@"RBTRibotCell"
                                                bundle:[NSBundle mainBundle]]
      forCellWithReuseIdentifier:@"RibotCell"];
     [self setTitle:@"The Ribots"];
+    
+    UIImage *backgroundImage = [UIImage imageNamed:@"Wallpaper"];
+    collectionView.backgroundView = [[UIImageView alloc] initWithImage:[backgroundImage imageResizingModeTile]];
+    
     RBTServiceCoordinator *sharedCoordinator = [RBTServiceCoordinator sharedCoordinator];
     [sharedCoordinator getTeam:^(NSArray *response, NSError *error) {
         if(error)
@@ -60,7 +65,7 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+
 }
 
 #pragma mark - Navigation

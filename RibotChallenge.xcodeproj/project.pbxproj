@@ -26,13 +26,14 @@
 		06C4E968199E19AE00F45FF1 /* RBTTweetCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06C4E966199E19AE00F45FF1 /* RBTTweetCell.xib */; };
 		06C4E96B199E1FA600F45FF1 /* UIColor+Tint.m in Sources */ = {isa = PBXBuildFile; fileRef = 06C4E96A199E1FA600F45FF1 /* UIColor+Tint.m */; };
 		06C4E96D199E4DF700F45FF1 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06C4E96C199E4DF700F45FF1 /* MessageUI.framework */; };
+		06C4E970199E676500F45FF1 /* UIImage+Tiling.m in Sources */ = {isa = PBXBuildFile; fileRef = 06C4E96F199E676500F45FF1 /* UIImage+Tiling.m */; };
+		06C4E972199E689800F45FF1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06C4E971199E689800F45FF1 /* Images.xcassets */; };
 		06FC93BE199CB66300968309 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06FC93BD199CB66300968309 /* Foundation.framework */; };
 		06FC93C0199CB66300968309 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06FC93BF199CB66300968309 /* CoreGraphics.framework */; };
 		06FC93C2199CB66300968309 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06FC93C1199CB66300968309 /* UIKit.framework */; };
 		06FC93C8199CB66300968309 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 06FC93C6199CB66300968309 /* InfoPlist.strings */; };
 		06FC93CA199CB66300968309 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 06FC93C9199CB66300968309 /* main.m */; };
 		06FC93CE199CB66300968309 /* RBTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 06FC93CD199CB66300968309 /* RBTAppDelegate.m */; };
-		06FC93D0199CB66300968309 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06FC93CF199CB66300968309 /* Images.xcassets */; };
 		06FC93D7199CB66300968309 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06FC93D6199CB66300968309 /* XCTest.framework */; };
 		06FC93D8199CB66300968309 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06FC93BD199CB66300968309 /* Foundation.framework */; };
 		06FC93D9199CB66300968309 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06FC93C1199CB66300968309 /* UIKit.framework */; };
@@ -97,6 +98,9 @@
 		06C4E969199E1FA600F45FF1 /* UIColor+Tint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Tint.h"; sourceTree = "<group>"; };
 		06C4E96A199E1FA600F45FF1 /* UIColor+Tint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Tint.m"; sourceTree = "<group>"; };
 		06C4E96C199E4DF700F45FF1 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		06C4E96E199E676500F45FF1 /* UIImage+Tiling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Tiling.h"; sourceTree = "<group>"; };
+		06C4E96F199E676500F45FF1 /* UIImage+Tiling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Tiling.m"; sourceTree = "<group>"; };
+		06C4E971199E689800F45FF1 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		06FC93BA199CB66300968309 /* RibotChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RibotChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		06FC93BD199CB66300968309 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		06FC93BF199CB66300968309 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -107,7 +111,6 @@
 		06FC93CB199CB66300968309 /* RibotChallenge-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RibotChallenge-Prefix.pch"; sourceTree = "<group>"; };
 		06FC93CC199CB66300968309 /* RBTAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RBTAppDelegate.h; sourceTree = "<group>"; };
 		06FC93CD199CB66300968309 /* RBTAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RBTAppDelegate.m; sourceTree = "<group>"; };
-		06FC93CF199CB66300968309 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		06FC93D5199CB66300968309 /* RibotChallengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RibotChallengeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		06FC93D6199CB66300968309 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		06FC93DE199CB66300968309 /* RibotChallengeTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RibotChallengeTests-Info.plist"; sourceTree = "<group>"; };
@@ -242,7 +245,6 @@
 				06FC93ED199CC6C400968309 /* View */,
 				06FC93EC199CC6B800968309 /* Model */,
 				06FC9409199D045C00968309 /* Utility */,
-				06FC93CF199CB66300968309 /* Images.xcassets */,
 				06FC93C4199CB66300968309 /* Supporting Files */,
 			);
 			path = RibotChallenge;
@@ -296,6 +298,7 @@
 				06FC93F0199CC8C400968309 /* MainStoryboard.storyboard */,
 				06FC93FB199CCBB900968309 /* RBTRibotCell.xib */,
 				06C4E966199E19AE00F45FF1 /* RBTTweetCell.xib */,
+				06C4E971199E689800F45FF1 /* Images.xcassets */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -332,6 +335,8 @@
 				06FC940B199D048100968309 /* UIColor+HexString.m */,
 				06C4E969199E1FA600F45FF1 /* UIColor+Tint.h */,
 				06C4E96A199E1FA600F45FF1 /* UIColor+Tint.m */,
+				06C4E96E199E676500F45FF1 /* UIImage+Tiling.h */,
+				06C4E96F199E676500F45FF1 /* UIImage+Tiling.m */,
 			);
 			name = Utility;
 			sourceTree = "<group>";
@@ -413,10 +418,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				06FC93F1199CC8C400968309 /* MainStoryboard.storyboard in Resources */,
+				06C4E972199E689800F45FF1 /* Images.xcassets in Resources */,
 				06FC93FC199CCBB900968309 /* RBTRibotCell.xib in Resources */,
 				06C4E968199E19AE00F45FF1 /* RBTTweetCell.xib in Resources */,
 				06FC93C8199CB66300968309 /* InfoPlist.strings in Resources */,
-				06FC93D0199CB66300968309 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -443,6 +448,7 @@
 				06FC9402199CD29700968309 /* RBTRibot.m in Sources */,
 				06C4E957199E0CA600F45FF1 /* STHTTPRequest+STTwitter.m in Sources */,
 				06C4E959199E0CA600F45FF1 /* STTwitterAppOnly.m in Sources */,
+				06C4E970199E676500F45FF1 /* UIImage+Tiling.m in Sources */,
 				06FC93FF199CD1E900968309 /* RBTServiceCoordinator.m in Sources */,
 				06C4E95D199E0CA600F45FF1 /* STTwitterOSRequest.m in Sources */,
 				06C4E955199E0CA600F45FF1 /* NSError+STTwitter.m in Sources */,
