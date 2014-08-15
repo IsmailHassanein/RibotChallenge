@@ -41,6 +41,7 @@
     [collectionView registerNib:[UINib nibWithNibName:@"RBTRibotCell"
                                                bundle:[NSBundle mainBundle]]
      forCellWithReuseIdentifier:@"RibotCell"];
+    [self setTitle:@"The Ribots"];
     RBTServiceCoordinator *sharedCoordinator = [RBTServiceCoordinator sharedCoordinator];
     [sharedCoordinator getTeam:^(NSArray *response, NSError *error) {
         if(error)
@@ -87,8 +88,8 @@
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    RBTRibotCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"RibotCell"
-                                                                   forIndexPath:indexPath];
+    RBTRibotCell *cell = ((RBTRibotCell *)[self.collectionView dequeueReusableCellWithReuseIdentifier:@"RibotCell"
+                                                                   forIndexPath:indexPath]);
 
     RBTRibot *tempRibot = [allRibots objectAtIndex:indexPath.row];
     [cell setUpFromRibot:tempRibot];
@@ -98,8 +99,8 @@
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
 #warning TODO
-    return CGSizeMake(100,
-                      100);
+    return CGSizeMake(230,
+                      230);
 }
 
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section

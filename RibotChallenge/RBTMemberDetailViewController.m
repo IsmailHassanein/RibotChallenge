@@ -9,6 +9,7 @@
 #import "RBTMemberDetailViewController.h"
 #import "RBTRibot.h"
 #import "UIColor+HexString.h"
+#import "STTwitter.h"
 
 @interface RBTMemberDetailViewController ()
 
@@ -69,9 +70,30 @@
         [favSweetLabel setText:ribot.favSweet];
         [favSeasonLabel setText:ribot.favSeason];
         [twitterLabel setText:ribot.twitter];
+        [self getTwitterFeedForRibot:ribot.twitter];
     }];
     [ribot getRibotar:^(UIImage *ribotar) {
         [ribotarView setImage:ribotar];
+    }];
+}
+
+- (void)getTwitterFeedForRibot:(NSString *)twitterName
+{
+    STTwitterAPI *twitter = [STTwitterAPI twitterAPIAppOnlyWithConsumerKey:@"lw0xV8VufxjHvhpn0xRzTeeJw"
+                                                                consumerSecret:@"i2TQvqhghPpQlHBNqZOgm1frtaYwJgBBAE8YTITE2ZhWCwZVfL"];
+    
+    [twitter verifyCredentialsWithSuccessBlock:^(NSString *bearerToken) {
+        
+        NSLog(@"Access granted with %@", bearerToken);
+        
+        [twitter getUserTimelineWithScreenName:twitterName successBlock:^(NSArray *statuses) {
+            NSLog(@"-- statuses: %@", statuses);
+        } errorBlock:^(NSError *error) {
+            NSLog(@"-- error: %@", error);
+        }];
+        
+    } errorBlock:^(NSError *error) {
+        NSLog(@"-- error %@", error);
     }];
 }
 

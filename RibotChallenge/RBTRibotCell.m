@@ -23,10 +23,23 @@
 
 -(void)setUpFromRibot:(RBTRibot *)ribot
 {
-    if (ribot.hexColor && ![ribot.hexColor isEqualToString:@"(null)"])
+    if (ribot.hexColor && ![ribot.hexColor isEqualToString:@""])
     {
     [self setBackgroundColor:[UIColor colorWithHexString:ribot.hexColor]];
+    } else {
+        [self setBackgroundColor:[UIColor whiteColor]];
     }
+    UILabel *nameLabel = ((UILabel *)[self viewWithTag:101]);
+    if (ribot.nickname && ![ribot.nickname isEqualToString:@""])
+    {
+        [nameLabel setText:ribot.nickname];
+    } else {
+        [nameLabel setText:ribot.firstName];
+    }
+    [ribot getRibotar:^(UIImage *ribotar) {
+        UIImageView *ribotarView = ((UIImageView *)[self viewWithTag:102]);
+        [ribotarView setImage:ribotar];
+    }];
 #warning TODO: set up cell from ribot
 }
 
