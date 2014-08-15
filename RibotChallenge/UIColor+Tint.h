@@ -1,14 +1,15 @@
 //
-//  RBTTweet.m
+//  UIColor+Tint.h
 //  RibotChallenge
 //
 //  Created by IsHass on 15/08/2014.
 //  Copyright (c) 2014 IsHass. All rights reserved.
 //
 
-#import "RBTTweet.h"
+#import <UIKit/UIKit.h>
 
-@implementation RBTTweet
-@synthesize text, created_at;
+@interface UIColor (Tint)
+
++(UIColor *)tintFromColor:(UIColor *)baseColor;
 
 @end

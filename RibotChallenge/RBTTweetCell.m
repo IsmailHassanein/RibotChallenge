@@ -2,7 +2,7 @@
 //  RBTTweetCell.m
 //  RibotChallenge
 //
-//  Created by Patrick Rocliffe on 15/08/2014.
+//  Created by IsHass on 15/08/2014.
 //  Copyright (c) 2014 IsHass. All rights reserved.
 //
 
@@ -34,6 +34,7 @@
 {
     [dateLabel setText:tweet.created_at];
     [tweetText setText:tweet.text];
+    [tweetText setFont:[UIFont systemFontOfSize:15]];
 }
 
 @end

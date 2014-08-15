@@ -24,6 +24,8 @@
 		06C4E963199E149E00F45FF1 /* RBTTweet.m in Sources */ = {isa = PBXBuildFile; fileRef = 06C4E962199E149E00F45FF1 /* RBTTweet.m */; };
 		06C4E967199E19AE00F45FF1 /* RBTTweetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 06C4E965199E19AE00F45FF1 /* RBTTweetCell.m */; };
 		06C4E968199E19AE00F45FF1 /* RBTTweetCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06C4E966199E19AE00F45FF1 /* RBTTweetCell.xib */; };
+		06C4E96B199E1FA600F45FF1 /* UIColor+Tint.m in Sources */ = {isa = PBXBuildFile; fileRef = 06C4E96A199E1FA600F45FF1 /* UIColor+Tint.m */; };
+		06C4E96D199E4DF700F45FF1 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06C4E96C199E4DF700F45FF1 /* MessageUI.framework */; };
 		06FC93BE199CB66300968309 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06FC93BD199CB66300968309 /* Foundation.framework */; };
 		06FC93C0199CB66300968309 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06FC93BF199CB66300968309 /* CoreGraphics.framework */; };
 		06FC93C2199CB66300968309 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06FC93C1199CB66300968309 /* UIKit.framework */; };
@@ -92,6 +94,9 @@
 		06C4E964199E19AE00F45FF1 /* RBTTweetCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBTTweetCell.h; sourceTree = "<group>"; };
 		06C4E965199E19AE00F45FF1 /* RBTTweetCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RBTTweetCell.m; sourceTree = "<group>"; };
 		06C4E966199E19AE00F45FF1 /* RBTTweetCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RBTTweetCell.xib; sourceTree = "<group>"; };
+		06C4E969199E1FA600F45FF1 /* UIColor+Tint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Tint.h"; sourceTree = "<group>"; };
+		06C4E96A199E1FA600F45FF1 /* UIColor+Tint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Tint.m"; sourceTree = "<group>"; };
+		06C4E96C199E4DF700F45FF1 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		06FC93BA199CB66300968309 /* RibotChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RibotChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		06FC93BD199CB66300968309 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		06FC93BF199CB66300968309 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -131,6 +136,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				06C4E96D199E4DF700F45FF1 /* MessageUI.framework in Frameworks */,
 				06C4E90A199E0B9300F45FF1 /* Social.framework in Frameworks */,
 				06FC93C0199CB66300968309 /* CoreGraphics.framework in Frameworks */,
 				06FC93C2199CB66300968309 /* UIKit.framework in Frameworks */,
@@ -216,6 +222,7 @@
 		06FC93BC199CB66300968309 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				06C4E96C199E4DF700F45FF1 /* MessageUI.framework */,
 				06C4E909199E0B9300F45FF1 /* Social.framework */,
 				06FC93BD199CB66300968309 /* Foundation.framework */,
 				06FC93BF199CB66300968309 /* CoreGraphics.framework */,
@@ -323,6 +330,8 @@
 				06C4E936199E0CA600F45FF1 /* STTwitter */,
 				06FC940A199D048100968309 /* UIColor+HexString.h */,
 				06FC940B199D048100968309 /* UIColor+HexString.m */,
+				06C4E969199E1FA600F45FF1 /* UIColor+Tint.h */,
+				06C4E96A199E1FA600F45FF1 /* UIColor+Tint.m */,
 			);
 			name = Utility;
 			sourceTree = "<group>";
@@ -430,6 +439,7 @@
 				06C4E95C199E0CA600F45FF1 /* STTwitterOS.m in Sources */,
 				06C4E956199E0CA600F45FF1 /* NSString+STTwitter.m in Sources */,
 				06FC93F7199CC9D600968309 /* RBTMembersCollectionViewController.m in Sources */,
+				06C4E96B199E1FA600F45FF1 /* UIColor+Tint.m in Sources */,
 				06FC9402199CD29700968309 /* RBTRibot.m in Sources */,
 				06C4E957199E0CA600F45FF1 /* STHTTPRequest+STTwitter.m in Sources */,
 				06C4E959199E0CA600F45FF1 /* STTwitterAppOnly.m in Sources */,

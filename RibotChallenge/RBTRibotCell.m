@@ -27,7 +27,7 @@
     {
     [self setBackgroundColor:[UIColor colorWithHexString:ribot.hexColor]];
     } else {
-        [self setBackgroundColor:[UIColor whiteColor]];
+        [self setBackgroundColor:[UIColor lightGrayColor]];
     }
     UILabel *nameLabel = ((UILabel *)[self viewWithTag:101]);
     if (ribot.nickname && ![ribot.nickname isEqualToString:@""])
@@ -40,16 +40,6 @@
         UIImageView *ribotarView = ((UIImageView *)[self viewWithTag:102]);
         [ribotarView setImage:ribotar];
     }];
-#warning TODO: set up cell from ribot
 }
-
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
-{
-    // Drawing code
-}
-*/
 
 @end

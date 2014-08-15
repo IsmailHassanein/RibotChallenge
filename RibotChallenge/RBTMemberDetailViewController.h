@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MessageUI/MessageUI.h>
 
 @class RBTRibot;
 
-@interface RBTMemberDetailViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface RBTMemberDetailViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, MFMailComposeViewControllerDelegate>
 
 @property (strong, nonatomic) RBTRibot *ribot;
 

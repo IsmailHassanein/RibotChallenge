@@ -83,6 +83,11 @@ completionHandler:^(RBTRibot *response, NSError *error) {
                             forKey:key];
                 } else if (![key isEqualToString:@"hexColor"] && ![key isEqualToString:@"nickname"] && ![key isEqualToString:@"identifier"])
                 {
+                    if ([key isEqualToString:@"favSweet"])
+                    {
+                        [self setValue:@"a mystery"
+                                forKey:key];
+                    }
                     [self setValue:@"It's a mystery"
                             forKey:key];
                 }
