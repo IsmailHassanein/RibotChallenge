@@ -25,7 +25,7 @@
 {
     if (ribot.hexColor && ![ribot.hexColor isEqualToString:@""])
     {
-    [self setBackgroundColor:[UIColor colorWithHexString:ribot.hexColor]];
+        [self setBackgroundColor:[UIColor colorWithHexString:ribot.hexColor]];
     } else {
         [self setBackgroundColor:[UIColor lightGrayColor]];
     }
@@ -37,8 +37,11 @@
         [nameLabel setText:ribot.firstName];
     }
     [ribot getRibotar:^(UIImage *ribotar) {
-        UIImageView *ribotarView = ((UIImageView *)[self viewWithTag:102]);
-        [ribotarView setImage:ribotar];
+        if (ribotar)
+        {
+            UIImageView *ribotarView = ((UIImageView *)[self viewWithTag:102]);
+            [ribotarView setImage:ribotar];
+        }
     }];
 }
 

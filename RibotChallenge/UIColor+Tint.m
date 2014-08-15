@@ -22,7 +22,7 @@
         blue += (0.25 * (1.0 - blue));
         green += (0.25 * (1.0 - green));
     }
-
+    
     return [UIColor colorWithRed:red
                            green:green
                             blue:blue

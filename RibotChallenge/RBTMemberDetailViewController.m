@@ -19,7 +19,6 @@
 @property (weak, nonatomic) IBOutlet UIImageView *ribotarView;
 @property (weak, nonatomic) IBOutlet UILabel *roleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *favSweetLabel;
-@property (weak, nonatomic) IBOutlet UILabel *emailLabel;
 @property (weak, nonatomic) IBOutlet UILabel *locationLabel;
 @property (weak, nonatomic) IBOutlet UILabel *descriptionTitleText;
 @property (weak, nonatomic) IBOutlet UITextView *descriptionText;
@@ -29,7 +28,7 @@
 @end
 
 @implementation RBTMemberDetailViewController
-@synthesize ribot, ribotarView, roleLabel, favSweetLabel, emailLabel, descriptionText, twitterFeed, twitterFeedTable, locationLabel, descriptionTitleText;
+@synthesize ribot, ribotarView, roleLabel, favSweetLabel, descriptionText, twitterFeed, twitterFeedTable, locationLabel, descriptionTitleText;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -63,41 +62,41 @@
     if (ribot.hexColor && ![ribot.hexColor isEqualToString:@""]) {
         [self.view setBackgroundColor:[UIColor tintFromColor:[UIColor colorWithHexString:ribot.hexColor]]];
         [ribotarView setBackgroundColor:[UIColor colorWithHexString:ribot.hexColor]];
-        //[self.view setAlpha:0.8];
+        [self.navigationController.navigationBar setTintColor:[UIColor redColor]];
     } else {
         [self.view setBackgroundColor:[UIColor tintFromColor:[UIColor lightGrayColor]]];
         [ribotarView setBackgroundColor:[UIColor lightGrayColor]];
     }
-
+    
     if (ribot.nickname && ![ribot.nickname isEqualToString:@""])
     {
         [self setTitle:[NSString stringWithFormat:@"%@ '%@' %@", ribot.firstName, ribot.nickname, ribot.lastName]];
     } else {
         [self setTitle:[NSString stringWithFormat:@"%@ %@", ribot.firstName, ribot.lastName]];
     }
-
+    
 #warning TODO: needs cancel!!!
     [ribot getAllInfo:^{
-#warning TODO: animate
-
         [roleLabel setText:ribot.role];
         [descriptionText setText:ribot.details];
         [descriptionText setFont:[UIFont systemFontOfSize:20]];
         [favSweetLabel setText:[NSString stringWithFormat:@"Favourite sweet is %@",ribot.favSweet]];
-        [emailLabel setText:[NSString stringWithFormat:@"Contact: %@",ribot.email]];
         [locationLabel setText:[NSString stringWithFormat:@"Lives in %@",ribot.location]];
         [descriptionTitleText setText:[NSString stringWithFormat:@"Who is %@?", ribot.firstName]];
         [self getTwitterFeedForRibot:ribot.twitter];
     }];
     [ribot getRibotar:^(UIImage *ribotar) {
-        [ribotarView setImage:ribotar];
+        if (ribotar)
+        {
+            [ribotarView setImage:ribotar];
+        }
     }];
 }
 
 - (void)getTwitterFeedForRibot:(NSString *)twitterName
 {
     STTwitterAPI *twitter = [STTwitterAPI twitterAPIAppOnlyWithConsumerKey:@"lw0xV8VufxjHvhpn0xRzTeeJw"
-                                                                consumerSecret:@"i2TQvqhghPpQlHBNqZOgm1frtaYwJgBBAE8YTITE2ZhWCwZVfL"];
+                                                            consumerSecret:@"i2TQvqhghPpQlHBNqZOgm1frtaYwJgBBAE8YTITE2ZhWCwZVfL"];
     
     [twitter verifyCredentialsWithSuccessBlock:^(NSString *bearerToken) {
         
@@ -169,8 +168,8 @@
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
     UIView *header = [[UIView alloc] initWithFrame:CGRectMake(0,
-                                                             0,
-                                                             tableView.frame.size.width,
+                                                              0,
+                                                              tableView.frame.size.width,
                                                               100)];
     if (ribot.hexColor && ![ribot.hexColor isEqualToString:@""])
     {
@@ -181,29 +180,33 @@
     UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0,
                                                                     0,
                                                                     tableView.frame.size.width,
-                                                                    20)];
+                                                                    40)];
     [titleLabel setText:ribot.twitter];
     [titleLabel setTextAlignment:NSTextAlignmentCenter];
     [titleLabel setTextColor:[UIColor whiteColor]];
     [titleLabel setFont:[UIFont boldSystemFontOfSize:25]];
     
-    UIImage *seasonImage = [UIImage imageNamed:ribot.favSeason];
-    UIImageView *leftSeasonImage = [[UIImageView alloc] initWithFrame:CGRectMake(20,
-                                                                                 30,
-                                                                                 40,
-                                                                                 40)];
-    [leftSeasonImage setImage:seasonImage];
-    [leftSeasonImage setContentMode:UIViewContentModeScaleAspectFit];
-    UIImageView *rightSeasonImage = [[UIImageView alloc] initWithFrame:CGRectMake(header.frame.size.width-70,
-                                                                                  30,
-                                                                                  40,
-                                                                                  40)];
-    [rightSeasonImage setImage:seasonImage];
-    [rightSeasonImage setContentMode:UIViewContentModeScaleAspectFit];
+    if (ribot.favSeason && ![ribot.favSeason isEqualToString:@""])
+    {
+        UIImage *seasonImage = [UIImage imageNamed:ribot.favSeason];
+        UIImageView *leftSeasonImage = [[UIImageView alloc] initWithFrame:CGRectMake(20,
+                                                                                     30,
+                                                                                     40,
+                                                                                     40)];
+        [leftSeasonImage setImage:seasonImage];
+        [leftSeasonImage setContentMode:UIViewContentModeScaleAspectFit];
+        UIImageView *rightSeasonImage = [[UIImageView alloc] initWithFrame:CGRectMake(header.frame.size.width-70,
+                                                                                      30,
+                                                                                      40,
+                                                                                      40)];
+        [rightSeasonImage setImage:seasonImage];
+        [rightSeasonImage setContentMode:UIViewContentModeScaleAspectFit];
+        [header addSubview:leftSeasonImage];
+        [header addSubview:rightSeasonImage];
+    }
+    
     [header addSubview:titleLabel];
     [titleLabel setCenter:header.center];
-    [header addSubview:leftSeasonImage];
-    [header addSubview:rightSeasonImage];
     
     return header;
 }

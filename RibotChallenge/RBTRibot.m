@@ -27,18 +27,18 @@
 {
     RBTServiceCoordinator *sharedCoordinator = [RBTServiceCoordinator sharedCoordinator];
     [sharedCoordinator getMember:identifier
-completionHandler:^(RBTRibot *response, NSError *error) {
-    if(error)
-    {
-        
-    } else {
-        [self mergeSelfWithRibot:response];
-        dispatch_async(dispatch_get_main_queue(),
-                       ^{
-                           completion();
-                       });
-    }
-}];
+               completionHandler:^(RBTRibot *response, NSError *error) {
+                   if(error)
+                   {
+                       
+                   } else {
+                       [self mergeSelfWithRibot:response];
+                       dispatch_async(dispatch_get_main_queue(),
+                                      ^{
+                                          completion();
+                                      });
+                   }
+               }];
 }
 
 -(void)getRibotar:(void (^)(UIImage *ribotar))completion
@@ -55,17 +55,17 @@ completionHandler:^(RBTRibot *response, NSError *error) {
                                            completion(placeholder);
                                        });
                     } else {
-                    dispatch_async(dispatch_get_main_queue(),
-                                   ^{
-                                       completion(response);
-                                   });
+                        dispatch_async(dispatch_get_main_queue(),
+                                       ^{
+                                           completion(response);
+                                       });
                     }
                 }];
 }
 
 -(void)mergeSelfWithRibot:(RBTRibot *)ribot
 {
-
+    
     unsigned int numberOfProperties = 0;
     objc_property_t *propertyArray = class_copyPropertyList([self class], &numberOfProperties);
     
@@ -92,8 +92,8 @@ completionHandler:^(RBTRibot *response, NSError *error) {
                             forKey:key];
                 }
             } else {
-            [self setValue:[ribot valueForKey:key]
-                    forKey:key];
+                [self setValue:[ribot valueForKey:key]
+                        forKey:key];
             }
         }
     }

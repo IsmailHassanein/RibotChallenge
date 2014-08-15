@@ -12,5 +12,5 @@
 @interface RBTTweetCell : UITableViewCell
 
 -(void)setUpFromTweet:(RBTTweet *)tweet;
-    
+
 @end

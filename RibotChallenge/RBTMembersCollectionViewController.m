@@ -89,8 +89,8 @@
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     RBTRibotCell *cell = ((RBTRibotCell *)[self.collectionView dequeueReusableCellWithReuseIdentifier:@"RibotCell"
-                                                                   forIndexPath:indexPath]);
-
+                                                                                         forIndexPath:indexPath]);
+    
     RBTRibot *tempRibot = [allRibots objectAtIndex:indexPath.row];
     [cell setUpFromRibot:tempRibot];
     return cell;
@@ -98,14 +98,12 @@
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-#warning TODO
     return CGSizeMake(230,
                       230);
 }
 
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
 {
-#warning TODO
     return UIEdgeInsetsMake(50,
                             20,
                             50,
