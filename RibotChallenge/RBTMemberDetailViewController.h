@@ -10,7 +10,7 @@
 
 @class RBTRibot;
 
-@interface RBTMemberDetailViewController : UIViewController
+@interface RBTMemberDetailViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 @property (strong, nonatomic) RBTRibot *ribot;
 

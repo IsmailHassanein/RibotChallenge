@@ -10,6 +10,8 @@
 #import "RBTRibot.h"
 #import "UIColor+HexString.h"
 #import "STTwitter.h"
+#import "RBTTweet.h"
+#import "RBTTweetCell.h"
 
 @interface RBTMemberDetailViewController ()
 
@@ -19,11 +21,13 @@
 @property (weak, nonatomic) IBOutlet UILabel *favSeasonLabel;
 @property (weak, nonatomic) IBOutlet UILabel *twitterLabel;
 @property (weak, nonatomic) IBOutlet UITextView *descriptionText;
+@property (weak, nonatomic) IBOutlet UITableView *twitterFeedTable;
+@property (strong, nonatomic) NSMutableArray *twitterFeed;
 
 @end
 
 @implementation RBTMemberDetailViewController
-@synthesize ribot, ribotarView, roleLabel, favSeasonLabel, favSweetLabel, twitterLabel, descriptionText;
+@synthesize ribot, ribotarView, roleLabel, favSeasonLabel, favSweetLabel, twitterLabel, descriptionText, twitterFeed, twitterFeedTable;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -38,6 +42,11 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [twitterFeedTable registerClass:[RBTTweetCell class]
+             forCellReuseIdentifier:@"tweetCell"];
+    [twitterFeedTable registerNib:[UINib nibWithNibName:@"RBTTweetCell"
+                                                 bundle:[NSBundle mainBundle]]
+           forCellReuseIdentifier:@"tweetCell"];
 }
 
 - (void)didReceiveMemoryWarning
@@ -87,7 +96,17 @@
         NSLog(@"Access granted with %@", bearerToken);
         
         [twitter getUserTimelineWithScreenName:twitterName successBlock:^(NSArray *statuses) {
-            NSLog(@"-- statuses: %@", statuses);
+            //NSLog(@"-- statuses: %@", statuses);
+            twitterFeed = [[NSMutableArray alloc] init];
+            for (NSDictionary *tempDict in statuses)
+            {
+                RBTTweet *tweet = [[RBTTweet alloc] init];
+                [tweet setText:[tempDict objectForKey:@"text"]];
+                [tweet setCreated_at:[tempDict objectForKey:@"created_at"]];
+                [twitterFeed addObject:tweet];
+                
+                [self.twitterFeedTable reloadData];
+            }
         } errorBlock:^(NSError *error) {
             NSLog(@"-- error: %@", error);
         }];
@@ -97,15 +116,26 @@
     }];
 }
 
-/*
-#pragma mark - Navigation
+#pragma mark - Table view delegate
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    return 1;
 }
-*/
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return [twitterFeed count];
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    RBTTweetCell *cell = [tableView dequeueReusableCellWithIdentifier:@"tweetCell"];
+    
+    RBTTweet *tweet = [twitterFeed objectAtIndex:indexPath.row];
+    [cell setUpFromTweet:tweet];
+    
+    return cell;
+}
 
 @end

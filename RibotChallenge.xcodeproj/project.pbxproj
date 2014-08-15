@@ -21,6 +21,9 @@
 		06C4E95E199E0CA600F45FF1 /* BAVPlistNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 06C4E94F199E0CA600F45FF1 /* BAVPlistNode.m */; };
 		06C4E95F199E0CA600F45FF1 /* JSONSyntaxHighlight.m in Sources */ = {isa = PBXBuildFile; fileRef = 06C4E951199E0CA600F45FF1 /* JSONSyntaxHighlight.m */; };
 		06C4E960199E0CA600F45FF1 /* STHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 06C4E953199E0CA600F45FF1 /* STHTTPRequest.m */; };
+		06C4E963199E149E00F45FF1 /* RBTTweet.m in Sources */ = {isa = PBXBuildFile; fileRef = 06C4E962199E149E00F45FF1 /* RBTTweet.m */; };
+		06C4E967199E19AE00F45FF1 /* RBTTweetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 06C4E965199E19AE00F45FF1 /* RBTTweetCell.m */; };
+		06C4E968199E19AE00F45FF1 /* RBTTweetCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06C4E966199E19AE00F45FF1 /* RBTTweetCell.xib */; };
 		06FC93BE199CB66300968309 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06FC93BD199CB66300968309 /* Foundation.framework */; };
 		06FC93C0199CB66300968309 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06FC93BF199CB66300968309 /* CoreGraphics.framework */; };
 		06FC93C2199CB66300968309 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06FC93C1199CB66300968309 /* UIKit.framework */; };
@@ -84,6 +87,11 @@
 		06C4E951199E0CA600F45FF1 /* JSONSyntaxHighlight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONSyntaxHighlight.m; sourceTree = "<group>"; };
 		06C4E952199E0CA600F45FF1 /* STHTTPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STHTTPRequest.h; sourceTree = "<group>"; };
 		06C4E953199E0CA600F45FF1 /* STHTTPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STHTTPRequest.m; sourceTree = "<group>"; };
+		06C4E961199E149E00F45FF1 /* RBTTweet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBTTweet.h; sourceTree = "<group>"; };
+		06C4E962199E149E00F45FF1 /* RBTTweet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RBTTweet.m; sourceTree = "<group>"; };
+		06C4E964199E19AE00F45FF1 /* RBTTweetCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBTTweetCell.h; sourceTree = "<group>"; };
+		06C4E965199E19AE00F45FF1 /* RBTTweetCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RBTTweetCell.m; sourceTree = "<group>"; };
+		06C4E966199E19AE00F45FF1 /* RBTTweetCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RBTTweetCell.xib; sourceTree = "<group>"; };
 		06FC93BA199CB66300968309 /* RibotChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RibotChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		06FC93BD199CB66300968309 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		06FC93BF199CB66300968309 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -269,6 +277,8 @@
 				06FC9401199CD29700968309 /* RBTRibot.m */,
 				06FC9406199CDAEF00968309 /* RBTStudio.h */,
 				06FC9407199CDAEF00968309 /* RBTStudio.m */,
+				06C4E961199E149E00F45FF1 /* RBTTweet.h */,
+				06C4E962199E149E00F45FF1 /* RBTTweet.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -278,6 +288,7 @@
 			children = (
 				06FC93F0199CC8C400968309 /* MainStoryboard.storyboard */,
 				06FC93FB199CCBB900968309 /* RBTRibotCell.xib */,
+				06C4E966199E19AE00F45FF1 /* RBTTweetCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -291,6 +302,8 @@
 				06FC9404199CD4B000968309 /* RBTMemberDetailViewController.m */,
 				06FC93F8199CCB9200968309 /* RBTRibotCell.h */,
 				06FC93F9199CCB9200968309 /* RBTRibotCell.m */,
+				06C4E964199E19AE00F45FF1 /* RBTTweetCell.h */,
+				06C4E965199E19AE00F45FF1 /* RBTTweetCell.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -392,6 +405,7 @@
 			files = (
 				06FC93F1199CC8C400968309 /* MainStoryboard.storyboard in Resources */,
 				06FC93FC199CCBB900968309 /* RBTRibotCell.xib in Resources */,
+				06C4E968199E19AE00F45FF1 /* RBTTweetCell.xib in Resources */,
 				06FC93C8199CB66300968309 /* InfoPlist.strings in Resources */,
 				06FC93D0199CB66300968309 /* Images.xcassets in Resources */,
 			);
@@ -412,6 +426,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				06C4E963199E149E00F45FF1 /* RBTTweet.m in Sources */,
 				06C4E95C199E0CA600F45FF1 /* STTwitterOS.m in Sources */,
 				06C4E956199E0CA600F45FF1 /* NSString+STTwitter.m in Sources */,
 				06FC93F7199CC9D600968309 /* RBTMembersCollectionViewController.m in Sources */,
@@ -429,6 +444,7 @@
 				06FC9405199CD4B000968309 /* RBTMemberDetailViewController.m in Sources */,
 				06FC9408199CDAEF00968309 /* RBTStudio.m in Sources */,
 				06C4E95E199E0CA600F45FF1 /* BAVPlistNode.m in Sources */,
+				06C4E967199E19AE00F45FF1 /* RBTTweetCell.m in Sources */,
 				06C4E95F199E0CA600F45FF1 /* JSONSyntaxHighlight.m in Sources */,
 				06C4E960199E0CA600F45FF1 /* STHTTPRequest.m in Sources */,
 				06C4E954199E0CA600F45FF1 /* NSDateFormatter+STTwitter.m in Sources */,

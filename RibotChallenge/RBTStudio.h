@@ -2,7 +2,7 @@
 //  RBTStudio.h
 //  RibotChallenge
 //
-//  Created by Patrick Rocliffe on 14/08/2014.
+//  Created by IsHass on 14/08/2014.
 //  Copyright (c) 2014 IsHass. All rights reserved.
 //
 
